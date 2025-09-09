@@ -1,8 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/images/SVKM_logo.png";
+import allCampuses from "../data/allCampuses";
 
 const Navbar = () => {
+  const [campuses, setCampuses] = useState({ districts: [], institutes: {} });
+
+  const displayCampuses = () => {
+    // Get unique districts
+    const districts = [
+      ...new Set(allCampuses.map((campus) => campus.district)),
+    ];
+
+    // Get institutes grouped by district
+    const institutesByDistrict = allCampuses.reduce((acc, campus) => {
+      const { district, name, website_url, shortName } = campus;
+      if (!acc[district]) {
+        acc[district] = [];
+      }
+      acc[district].push({ name, website_url, shortName });
+      return acc;
+    }, {});
+
+    // Set the campuses state
+    setCampuses({ districts, institutes: institutesByDistrict });
+  };
   useEffect(() => {
+    displayCampuses();
+
     // Scroll effect
     const toggleScrolled = () => {
       const selectBody = document.querySelector("body");
@@ -97,31 +121,32 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
+            <li>
+              <a href="/events">Management</a>
+            </li>
             <li className="dropdown">
               <a href="#">
-                <span>Institutes</span>
+                <span>Campuses</span>
                 <i className="bi bi-chevron-down toggle-dropdown"></i>
               </a>
               <ul>
-                <li>
-                  <a href="#">School</a>
-                </li>
-                <li>
-                  <a href="#">Junior College</a>
-                </li>
-                <li>
-                  <a href="#">Degree & Post Graduate</a>
-                </li>
-                <li>
-                  <a href="#">
-                    Professional Institutes/Deemed-to-be-University
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Ketkiben Mukeshbhai Patel, Central Library (Shirpur)
-                  </a>
-                </li>
+                {campuses.districts.map((district) => (
+                  <li className="dropdown" key={district}>
+                    <a href="#">
+                      <span>{district}</span>
+                      <i className="bi bi-chevron-down toggle-dropdown"></i>
+                    </a>
+                    <ul>
+                      {campuses.institutes[district]?.map((campus) => (
+                        <li key={campus.name}>
+                          <a href={campus.website_url || "#"} target="_blank">
+                            {campus.shortName}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
               </ul>
             </li>
             <li className="dropdown">

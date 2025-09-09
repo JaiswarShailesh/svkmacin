@@ -18,7 +18,7 @@ const OurRoots = () => {
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
         <h2>SVKM's</h2>
-        <p>Roots</p>
+        <p>Campuses</p>
       </div>
       {/* End Section Title */}
 

@@ -22,12 +22,12 @@ const HeroBanner = () => {
 
         <div className="container">
           <h2 data-aos="fade-up" data-aos-delay="100">
-            Healing with Tradition,
+            Rooted in Tradition,
             <br />
-            Empowering with Knowledge
+            Leading with Knowledge
           </h2>
           <p data-aos="fade-up" data-aos-delay="200">
-            Bringing the ancient wisdom of Ayurveda to modern healthcare.
+            Empowering generations through education and heritage
           </p>
           <div className="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
             <a href="courses.html" className="btn-get-started">

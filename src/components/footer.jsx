@@ -7,16 +7,17 @@ const Footer = () => {
         <div className="row gy-4">
           <div className="col-lg-4 col-md-6 footer-about">
             <a href="index.html" className="logo d-flex align-items-center">
-              <span className="sitename">AYURVEDA</span>
+              <span className="sitename">Shri Vile Parle Kelvani Mandal</span>
             </a>
             <div className="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
+              <p>SVKM's NMIMS New Building,</p>
+              <p>10th Floor, West Wing, V.L.Mehta Marg,</p>
+              <p>Vile Parle (W), Mumbai 400056.</p>
               <p className="mt-3">
-                <strong>Phone:</strong> <span>+1 5589 55488 55</span>
+                <strong>Tel:</strong> <span>+91-22-4219 9999</span>
               </p>
               <p>
-                <strong>Email:</strong> <span>info@example.com</span>
+                <strong>Fax:</strong> <span>+91-22-2613 3400</span>
               </p>
             </div>
             <div className="social-links d-flex mt-4">
@@ -105,7 +106,7 @@ const Footer = () => {
       <div className="container copyright text-center mt-4">
         <p>
           © <span>Copyright</span>{" "}
-          <strong className="px-1 sitename">SVKM's Ayurveda</strong>{" "}
+          <strong className="px-1 sitename">SVKM</strong>{" "}
           <span>All Rights Reserved</span>
         </p>
         <div className="credits">
