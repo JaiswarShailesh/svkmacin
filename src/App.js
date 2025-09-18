@@ -10,6 +10,7 @@ import OurRoots from "./components/ourRoots";
 import TestimonialSection from "./components/testimonialSection";
 import KeyHighLights from "./components/keyHighlights";
 import NewsAndEventsSection from "./components/newsAndEventsSection";
+import MapComponent from "./components/mapComponent";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <SvkmManagementSection />
       {/* <Courses /> */}
       {/* <IndiaMap /> */}
+      <MapComponent />
       <OurRoots />
       <NewsAndEventsSection />
       <TestimonialSection />
